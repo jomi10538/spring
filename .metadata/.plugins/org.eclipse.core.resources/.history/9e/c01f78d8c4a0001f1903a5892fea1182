@@ -1,0 +1,295 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘 뭐해?달리자!</title>
+</head>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    p,
+    span {
+      margin: 0;
+    }
+
+    a {
+      color: black;
+    }
+
+    img {
+      display: block;
+      width: 80%;
+      height: 80px;
+      margin: auto;
+    }
+
+    .cart {
+      width: 80%;
+      margin: auto;
+      padding: 30px;
+    }
+
+    .cart ul {
+      background-color: whitesmoke;
+      padding: 30px;
+      margin-bottom: 50px;
+      border: whitesmoke solid 1px;
+      border-radius: 5px;
+      font-size: 13px;
+      font-weight: 300;
+    }
+
+    .cart ul :first-child {
+      color: limegreen;
+    }
+
+    table {
+      border-top: solid 1.5px black;
+      border-collapse: collapse;
+      width: 100%;
+      font-size: 14px;
+    }
+
+    thead {
+      text-align: center;
+      font-weight: bold;
+    }
+
+    tbody {
+      font-size: 12px;
+      text-align: center;
+    }
+
+    td {
+      padding: 15px 0px;
+      border-bottom: 1px solid lightgrey;
+    }
+
+    .cart__list__detail :nth-child(3) {
+      vertical-align: top;
+    }
+
+    .cart__list__detail :nth-child(3) a {
+      font-size: 12px;
+    }
+
+    .cart__list__detail :nth-child(3) p {
+      margin-top: 6px;
+      font-weight: bold;
+    }
+
+    .cart__list__smartstore {
+      font-size: 12px;
+      color: gray;
+    }
+
+    .cart__list__option {
+      vertical-align: top;
+      padding: 20px;
+    }
+
+    .cart__list__option p {
+      margin-bottom: 25px;
+      position: relative;
+    }
+
+    .cart__list__option p::after {
+      content: "";
+      width: 90%;
+      height: 1px;
+      background-color: lightgrey;
+      left: 0px;
+      top: 25px;
+      position: absolute;
+    }
+
+    .cart__list__optionbtn {
+      background-color: white;
+      font-size: 10px;
+      border: lightgrey solid 1px;
+      padding: 7px;
+    }
+
+    .cart__list__detail :nth-child(4),
+    .cart__list__detail :nth-child(5),
+    .cart__list__detail :nth-child(6) {
+      border-left: 2px solid whitesmoke;
+    }
+
+    .cart__list__detail :nth-child(5),
+    .cart__list__detail :nth-child(6) {
+      text-align: center;
+    }
+
+    .cart__list__detail :nth-child(5) button {
+      background-color: limegreen;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 4px 8px;
+      font-size: 12px;
+      margin-top: 5px;
+    }
+
+    .price {
+      font-weight: bold;
+    }
+
+    .cart__mainbtns {
+      width: 420px;
+      height: 200px;
+      padding-top: 40px;
+      display: block;
+      margin: auto;
+    }
+
+    .cart__bigorderbtn {
+      width: 200px;
+      height: 50px;
+      font-size: 16px;
+      margin: auto;
+      border-radius: 5px;
+    }
+
+    .cart__bigorderbtn.left {
+      background-color: white;
+      border: 1px lightgray solid;
+    }
+
+    .cart__bigorderbtn.right {
+      background-color: limegreen;
+      color: white;
+      border: none;
+    }
+
+    input[type=number]::-webkit-inner-spin-button {
+      opacity: 1
+    }
+  </style>
+<body>
+    <header>
+        <style>
+            
+        </style>
+        <div class="header" >
+            <h1>마라토니아</h1>
+        
+        </div>
+    </header>
+    <nav>
+        <div id="menu">
+        <ul>
+            <li><a href="#">처음으로</a>
+                <ul>
+                    <li><a href="#">소개하기</a></li>
+                    <li><a href="#">마라톤의 역사</a></li>
+                    <li><a href="#">대회 일정</a></li>
+                </ul>
+            </li>
+            <li><a href="#">MARATHON</a>
+                <ul>
+                    <li><a href="#">마라톤 상식</a></li>
+                    <li><a href="#">페이스 차트</a></li>
+                    <li><a href="#">식이요법</a></li>
+                </ul>
+            </li>
+            <li><a href="#">러닝코스</a>
+                <ul>
+                    <li><a href="#">러닝코스</a></li>
+                    <li><a href="#">훈련코스</a></li>
+                    <li><a href="#">마라톤대회코스</a></li>
+                </ul>
+            </li>
+            <li><a href="#">훈련방법</a>
+                <ul>
+                    <li><a href="#">10K</a></li>
+                    <li><a href="#">HALF</a></li>
+                    <li><a href="#">FULL</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <style type="text/css">
+        
+            * {
+                margin: 0;
+                padding: 0;
+            }
+      
+            ul li{
+                list-style: none;
+            }
+       
+            a {
+                text-decoration: none;
+                color:#333;
+            }
+        
+            #menu {
+                font:bold 16px "malgun gothic";
+                width:1300px;
+                height:30px;
+                background:mediumpurple;
+                color:black;
+                line-height: 29px; 
+                margin:0 auto;
+                text-align: center;
+            }
+        
+        
+            #menu > ul > li {
+                float:left;
+                width:140px;
+                position:relative;
+            }
+            #menu > ul > li > ul {
+		    width:140px;
+		    display:none;
+		    position: absolute;
+		    font-size:14px;
+		    background: mediumslateblue;
+	        }
+            #menu > ul > li:hover > ul {
+		    display:block;
+	        }
+            #menu > ul > li > ul > li:hover {
+		    background: orange;
+		    transition: ease 1s;
+		    }
+            </style>
+            
+        
+        
+    </nav>
+    <section>
+        <div>
+            <img src="./img/마라톤.png"style=width:870px;height:380px; alt="">
+        </div>
+    </section>
+    <aside>
+        <div>
+
+        </div>
+    </aside>
+    <div id="display">
+        <div class="display_01">
+            <h2>안녕?마라토니아에 온걸 환영해!</h2>
+            <p>러닝에 관심있는 사람들을 위해 만들었어!</p>
+            <p>여기서 여러가지 정보를 많이 얻어갔으면 좋겠다!</p>
+            <p>부족하지만 잘 보고 갔으면 좋겠어!</p>
+        </div>
+    
+        
+    </div>
+    <footer>이거는 유노유노가 만들었당~!</footer>
+</body>
+</html>
